@@ -9,11 +9,11 @@ main = hspec $ do
 
 
 formatWithTest = describe "formatNum" $ do
-    it "parses a simple format" $ 
+    it "formats a simple format" $ 
         formatNum format 1200300.106 == "$1,200,300.11"
-    it "parses negatives" $
+    it "formats negatives" $
         formatNum format (-1200300.106) == "-$1,200,300.11"
-    it "parses different orders" $
+    it "formats different orders" $
         formatNum (format {negativeToSymbol = Before}) (-1200.189) == "$-1,200.19"
     it "formats without decimals" $
         formatNum format 1200 == "$1,200"
