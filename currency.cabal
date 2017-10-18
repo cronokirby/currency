@@ -2,7 +2,7 @@ name:                currency
 version:             0.1.0.0
 -- synopsis:
 -- description:
-homepage:            https://github.com/githubuser/currency#readme
+homepage:            https://github.com/cronokirby/currency
 license:             MIT
 license-file:        LICENSE
 author:              Lúcás Meier
@@ -30,4 +30,4 @@ test-suite currency-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/currency
+  location: https://github.com/cronokirby/currency
