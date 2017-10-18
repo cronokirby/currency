@@ -30,8 +30,8 @@ data Placement
 data Format = Format 
     { displayDecimals :: Int -- ^ How many decimals to display? (>= 0)
     , decimalSep :: T.Text  -- ^ The seperator for the decimals
-    , groupSep :: T.Text -- ^ The seperator for groups left of the decimal
     , groupSize :: Int -- ^ How many characters to group by? (> 0)
+    , groupSep :: T.Text -- ^ The seperator for groups left of the decimal
     , symbol :: T.Text -- ^ What symbol represents this currency?
     , symbolPlacement :: Placement -- ^ Where to place this symbol?
     , negativePlacement :: Placement -- ^ Where to place the negative symbol (-) relative to the number?
@@ -75,6 +75,10 @@ formatWith Format{..} isNegative front decimals =
             placeNeg (placeSymbol body)
 
 
+-- | Formats a number with a given format
+-- Examples:
+-- >>> formatNum (Format 2 "." "," 3 "$" Before Before After) (-1200300.106)
+-- "-$1,200,300.11"
 formatNum :: RealFrac n => Format -> n -> T.Text
 formatNum f num = formatWith f isNegative notDecimals nonEmptyDecimals
   where
@@ -86,3 +90,10 @@ formatNum f num = formatWith f isNegative notDecimals nonEmptyDecimals
     nonEmptyDecimals = if nDecimals == 0
         then ""
         else toText nDecimals
+
+
+data Currency
+    = AFN -- ^ Afghanistan, Afghani
+    | ALL -- ^ Albania, Lek
+    | AOA -- ^ Angola, Kwanza
+    | DZD -- ^ Alberian Dinar
