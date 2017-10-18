@@ -90,10 +90,3 @@ formatNum f num = formatWith f isNegative notDecimals nonEmptyDecimals
     nonEmptyDecimals = if nDecimals == 0
         then ""
         else toText nDecimals
-
-
-data Currency
-    = AFN -- ^ Afghanistan, Afghani
-    | ALL -- ^ Albania, Lek
-    | AOA -- ^ Angola, Kwanza
-    | DZD -- ^ Alberian Dinar
