@@ -1,10 +1,8 @@
 name:                currency
 version:             0.1.0.0
--- synopsis:
--- description:
 homepage:            https://github.com/cronokirby/currency
 license:             MIT
-license-file:        LICENSE
+license-file:        LICENSE.md
 author:              Lúcás Meier
 maintainer:          cronokirby@gmail.com
 copyright:           2017 Lúcás Meier
@@ -17,6 +15,7 @@ library
   hs-source-dirs:      src
   exposed-modules:     Data.Currency
   build-depends:       base >= 4.7 && < 5
+                     , text
   default-language:    Haskell2010
 
 test-suite currency-test
